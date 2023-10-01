@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/venueEditText"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:hint="Venue" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/doctorsNameEditText"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:hint="Doctor's Name" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="CHOOSE DATE AND TIME"
+        android:textSize="19sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:id="@+id/dateAndTimeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp">
+
+        <DatePicker
+            android:id="@+id/healthCheckDatePicker"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:datePickerMode="spinner"
+            android:calendarViewShown="false"
+            android:layout_gravity="center"
+            android:scaleX="0.7"
+            android:scaleY="0.7" />
+
+        <TimePicker
+            android:id="@+id/healthCheckTimePicker"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:timePickerMode="spinner"
+            android:layout_gravity="center"
+            android:scaleY="0.7"
+            android:scaleX="0.7" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/confirmHealthCheckButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="16dp"
+        android:text="Confirm Checkup" />
+
+</LinearLayout>
