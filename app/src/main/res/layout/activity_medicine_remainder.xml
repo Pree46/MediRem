@@ -4,17 +4,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@drawable/sign_up_page">
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/medicineNameEditText"
-        android:layout_width="match_parent"
+        android:layout_width="326dp"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
         android:hint="Medicine Name" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="10dp"
         android:text="CHOOSE THE TYPE OF MEDICINE"
         android:gravity="center"
         android:textSize="16sp"

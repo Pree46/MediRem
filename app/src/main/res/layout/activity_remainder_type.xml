@@ -6,27 +6,30 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center"
-    android:background="#FFFFFF"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@drawable/sign_up_page">
 
     <TextView
         android:id="@+id/textViewTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="monospace"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="150dp"
+        android:layout_marginBottom="30dp"
+        android:fontFamily="@font/poppins"
         android:gravity="center_horizontal"
         android:text="CHOOSE YOUR REMINDER"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="#000000"
         android:textSize="28sp"
-        android:textStyle="bold"
-        android:layout_gravity="center_horizontal"/>
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/healthCheckButton"
         android:layout_width="200dp"
         android:layout_height="70dp"
+        android:layout_marginBottom="10dp"
         android:text="HEALTH CHECK UP"
         android:layout_gravity="center_horizontal"/>
 
@@ -34,6 +37,8 @@
         android:id="@+id/medicineButton"
         android:layout_width="200dp"
         android:layout_height="70dp"
+        android:layout_marginBottom="10dp"
+
         android:text="MEDICINE"
         android:layout_gravity="center_horizontal"/>
 

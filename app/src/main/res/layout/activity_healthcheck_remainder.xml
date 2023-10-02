@@ -5,25 +5,45 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@drawable/sign_up_page">
 
+    <TextView
+        android:id="@+id/checkup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="56dp"
+        android:fontFamily="@font/poppins"
+        android:text="Check Up"
+        android:textColor="#000000"
+        android:layout_marginBottom="70dp"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/venueEditText"
-        android:layout_width="409dp"
+        android:layout_width="326dp"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
         android:hint="Venue" />
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/doctorsNameEditText"
-        android:layout_width="409dp"
+        android:layout_width="326dp"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
         android:hint="Doctor's Name" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins"
         android:gravity="center"
+        android:layout_marginTop="30dp"
         android:text="CHOOSE DATE AND TIME"
         android:textSize="19sp"
         android:textStyle="bold" />
@@ -38,10 +58,10 @@
             android:id="@+id/healthCheckDatePicker"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:datePickerMode="spinner"
-            android:calendarViewShown="false"
             android:layout_gravity="center"
+            android:layout_weight="1.5"
+            android:calendarViewShown="false"
+            android:datePickerMode="spinner"
             android:scaleX="0.7"
             android:scaleY="0.7" />
 
@@ -49,11 +69,11 @@
             android:id="@+id/healthCheckTimePicker"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:timePickerMode="spinner"
             android:layout_gravity="center"
+            android:layout_weight="2"
+            android:scaleX="0.7"
             android:scaleY="0.7"
-            android:scaleX="0.7" />
+            android:timePickerMode="spinner" />
 
     </LinearLayout>
 
