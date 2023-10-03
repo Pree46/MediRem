@@ -9,6 +9,11 @@
     android:padding="16dp"
     tools:context=".MainActivity"
     android:background="@drawable/sign_up_page">
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="84dp"
+        android:layout_height="69dp"
+        app:srcCompat="@drawable/medilogo" />
 
     <TextView
         android:id="@+id/textView"
@@ -16,7 +21,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="100dp"
         android:fontFamily="@font/poppins_semibold"
-        android:text="Health Log"
+        android:text="Medi-Rem"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
