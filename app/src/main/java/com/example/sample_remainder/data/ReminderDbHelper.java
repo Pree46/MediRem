@@ -46,7 +46,6 @@ public class ReminderDbHelper extends SQLiteOpenHelper {
         final String SQL_CREATE_HEALTHCHECK_TABLE = "CREATE TABLE " +
                 HealthCheckContract.HealthCheckEntry.TABLE_NAME + " (" +
                 HealthCheckContract.HealthCheckEntry.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                HealthCheckContract.HealthCheckEntry.COLUMN_USER_ID + " INTEGER NOT NULL, " +
                 HealthCheckContract.HealthCheckEntry.COLUMN_HEALTH_CHECK_NAME + " TEXT NOT NULL, " +
                 HealthCheckContract.HealthCheckEntry.COLUMN_REMINDER_TIME + " INTEGER NOT NULL);";
 
