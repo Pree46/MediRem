@@ -32,6 +32,19 @@ public class MedicineDbUtils {
         db.close();
     }
 
+    public static void insertHealthCheckupReminder(Context context, String healthCheckName, long reminderTime) {
+        ReminderDbHelper dbHelper = new ReminderDbHelper(context);
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put(HealthCheckContract.HealthCheckEntry.COLUMN_HEALTH_CHECK_NAME, healthCheckName);
+        values.put(HealthCheckContract.HealthCheckEntry.COLUMN_REMINDER_TIME, reminderTime);
+
+        db.insert(HealthCheckContract.HealthCheckEntry.TABLE_NAME, null, values);
+        db.close();
+    }
+
+
     // Define other database operations (query, update, delete) here
 
     public static Cursor queryMedicineReminders(Context context) {

@@ -11,11 +11,15 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.TimePicker;
 import android.widget.Toast;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NotificationCompat;
+
+import com.example.sample_remainder.data.MedicineDbUtils;
+
 import java.util.Calendar;
 
 
@@ -24,6 +28,8 @@ public class healthcheck_remainder extends AppCompatActivity {
     private DatePicker datePicker;
     private TimePicker timePicker;
 
+    public EditText healthCheckVenue;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,6 +37,9 @@ public class healthcheck_remainder extends AppCompatActivity {
 
         datePicker = findViewById(R.id.healthCheckDatePicker);
         timePicker = findViewById(R.id.healthCheckTimePicker);
+        healthCheckVenue=findViewById(R.id.venueEditText);
+
+
 
         Button confirmButton = findViewById(R.id.confirmHealthCheckButton);
         confirmButton.setOnClickListener(new View.OnClickListener() {
@@ -54,6 +63,9 @@ public class healthcheck_remainder extends AppCompatActivity {
         calendar.set(year, month, day, hour, minute, 0);
 
         String notificationMessage = "Time for your health checkup";
+        String CheckupVenue = healthCheckVenue.getText().toString();
+
+        MedicineDbUtils.insertHealthCheckupReminder(getApplicationContext(), CheckupVenue, calendar.getTimeInMillis());
 
         // Set up the notification
         setNotificationAlarm(this, notificationMessage, calendar.getTimeInMillis());
