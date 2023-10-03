@@ -19,13 +19,13 @@ public class MedicineDbUtils {
         db.insert(MedicineContract.MedicineEntry.TABLE_NAME, null, values);
         db.close();
     }
-    public static void insertLabTestReminder(Context context, String labTestName, String labVenue, long reminderTime) {
+    public static void insertLabTestReminder(Context context, String labVenue, String labTestName, long reminderTime) {
         ReminderDbHelper dbHelper = new ReminderDbHelper(context);
         SQLiteDatabase db = dbHelper.getWritableDatabase();
 
         ContentValues values = new ContentValues();
-        values.put(labTestContract.LabTestEntry.COLUMN_LAB_TEST_NAME, labTestName);
         values.put(labTestContract.LabTestEntry.COLUMN_VENUE, labVenue);
+        values.put(labTestContract.LabTestEntry.COLUMN_LAB_TEST_NAME, labTestName);
         values.put(labTestContract.LabTestEntry.COLUMN_REMINDER_TIME, reminderTime);
 
         db.insert(labTestContract.LabTestEntry.TABLE_NAME, null, values);
@@ -69,30 +69,7 @@ public class MedicineDbUtils {
         return cursor;
     }
 
-    public static Cursor queryLabTestReminders(Context context, long userId) {
-        ReminderDbHelper dbHelper = new ReminderDbHelper(context);
-        SQLiteDatabase db = dbHelper.getReadableDatabase();
 
-        String[] projection = {
-                labTestContract.LabTestEntry.COLUMN_LAB_TEST_NAME,
-                labTestContract.LabTestEntry.COLUMN_REMINDER_TIME
-        };
-
-        String selection = labTestContract.LabTestEntry.COLUMN_USER_ID + " = ?";
-        String[] selectionArgs = {String.valueOf(userId)};
-
-        Cursor cursor = db.query(
-                labTestContract.LabTestEntry.TABLE_NAME,
-                projection,
-                selection,
-                selectionArgs,
-                null,
-                null,
-                null
-        );
-
-        return cursor;
-    }
     public static void updateMedicineReminder(Context context, long reminderId, long newReminderTime) {
         ReminderDbHelper dbHelper = new ReminderDbHelper(context);
         SQLiteDatabase db = dbHelper.getWritableDatabase();

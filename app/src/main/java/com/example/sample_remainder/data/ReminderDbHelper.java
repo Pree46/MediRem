@@ -36,7 +36,7 @@ public class ReminderDbHelper extends SQLiteOpenHelper {
         final String SQL_CREATE_LABTEST_TABLE = "CREATE TABLE " +
                 labTestContract.LabTestEntry.TABLE_NAME + " (" +
                 labTestContract.LabTestEntry.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                labTestContract.LabTestEntry.COLUMN_USER_ID + " INTEGER NOT NULL, " +
+                labTestContract.LabTestEntry.COLUMN_VENUE + " TEXT NOT NULL, " +
                 labTestContract.LabTestEntry.COLUMN_LAB_TEST_NAME + " TEXT NOT NULL, " +
                 labTestContract.LabTestEntry.COLUMN_REMINDER_TIME + " INTEGER NOT NULL);";
 

@@ -66,7 +66,7 @@ public class labtest_remainder extends AppCompatActivity {
         String notificationMessage = "Time for your lab test";
 
         Context context = getApplicationContext(); // Replace this with the appropriate context
-        MedicineDbUtils.insertLabTestReminder(context, labtest, labVenue, calendar.getTimeInMillis());
+        MedicineDbUtils.insertLabTestReminder(context, labVenue, labtest, calendar.getTimeInMillis());
 
         // Set up the notification
         setNotificationAlarm(this, notificationMessage, calendar.getTimeInMillis());
