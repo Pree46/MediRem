@@ -19,12 +19,11 @@ public class MedicineDbUtils {
         db.insert(MedicineContract.MedicineEntry.TABLE_NAME, null, values);
         db.close();
     }
-    public static void insertLabTestReminder(Context context, long userId, String labTestName, String labVenue, long reminderTime) {
+    public static void insertLabTestReminder(Context context, String labTestName, String labVenue, long reminderTime) {
         ReminderDbHelper dbHelper = new ReminderDbHelper(context);
         SQLiteDatabase db = dbHelper.getWritableDatabase();
 
         ContentValues values = new ContentValues();
-        values.put(labTestContract.LabTestEntry.COLUMN_USER_ID, userId);
         values.put(labTestContract.LabTestEntry.COLUMN_LAB_TEST_NAME, labTestName);
         values.put(labTestContract.LabTestEntry.COLUMN_VENUE, labVenue);
         values.put(labTestContract.LabTestEntry.COLUMN_REMINDER_TIME, reminderTime);

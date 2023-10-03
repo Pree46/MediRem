@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TimePicker;
@@ -59,25 +60,39 @@ public class medicine_remainder extends AppCompatActivity {
 
         Calendar calendar = Calendar.getInstance();
         calendar.set(year, month, day, hour, minute, 0);
+        final String[] medicineType = {""};
 
-        int selectedMedicineType = medicineTypeRadioGroup.getCheckedRadioButtonId();
-        String medicineType = "";
+        ImageButton syringeButton = findViewById(R.id.syringeRadioButton);
+        ImageButton syrupButton = findViewById(R.id.syrupRadioButton);
+        ImageButton pillsButton = findViewById(R.id.pillsRadioButton);
 
-        switch (selectedMedicineType) {
-            case R.id.syringeRadioButton:
-                medicineType = "Syringe";
-                break;
-            case R.id.syrupRadioButton:
-                medicineType = "Syrup";
-                break;
-            case R.id.pillsRadioButton:
-                medicineType = "Pills";
-                break;
-        }
+        syringeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                medicineType[0] = "Syringe";
+                // Handle the selected medicine type here
+            }
+        });
+
+        syrupButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                medicineType[0] = "Syrup";
+                // Handle the selected medicine type here
+            }
+        });
+
+        pillsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                medicineType[0] = "Pills";
+                // Handle the selected medicine type here
+            }
+        });
 
         String medName = medicineName.getText().toString();
 
-        String notificationMessage = "Time to take your " + medicineType;
+        String notificationMessage = "Time to take your " + medicineType[0] + " " + medName;
 
         MedicineDbUtils.insertMedicineReminder(this, medName, calendar.getTimeInMillis());
 
@@ -86,6 +101,7 @@ public class medicine_remainder extends AppCompatActivity {
         Intent intent = new Intent(this, MedicineListActivity.class);
         startActivity(intent);
     }
+
 
     // Method to set up the notification alarm
     private void setNotificationAlarm(Context context, String message, long timeInMillis) {
