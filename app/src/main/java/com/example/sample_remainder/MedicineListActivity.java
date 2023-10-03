@@ -26,10 +26,12 @@ public class MedicineListActivity extends AppCompatActivity {
     }
 
     private void loadMedicineReminders() {
+
         // Query the database for medicine reminders
         Cursor cursor = MedicineDbUtils.queryMedicineReminders(this);
 
         // Update the cursor in the adapter to refresh the list
         cursorAdapter.swapCursor(cursor);
     }
+
 }

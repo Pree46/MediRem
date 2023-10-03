@@ -1,12 +1,17 @@
 package com.example.sample_remainder;
 
+import android.content.ContentValues;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.sample_remainder.data.ReminderDbHelper;
+import com.example.sample_remainder.data.UserContract;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -56,4 +61,23 @@ public class MainActivity extends AppCompatActivity {
     private void showToast(String message) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
+    private void insertUserCredentials(String username, String password) {
+        ReminderDbHelper dbHelper = new ReminderDbHelper(this);
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put(UserContract.UserEntry.COLUMN_USERNAME, username);
+        values.put(UserContract.UserEntry.COLUMN_PASSWORD, password);
+
+        long newRowId = db.insert(UserContract.UserEntry.TABLE_NAME, null, values);
+
+        if (newRowId != -1) {
+            showToast("User registered successfully");
+        } else {
+            showToast("Error registering user");
+        }
+
+        db.close();
+    }
+
 }

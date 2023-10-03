@@ -17,13 +17,13 @@ public class MedicineCursorAdapter extends CursorAdapter {
 
     @Override
     public View newView(Context context, Cursor cursor, ViewGroup parent) {
-        return LayoutInflater.from(context).inflate(R.layout.medicine_list_item, parent, false);
+        return LayoutInflater.from(context).inflate(R.layout.activity_medicine_list, parent, false);
     }
 
     @Override
     public void bindView(View view, Context context, Cursor cursor) {
-        TextView nameTextView = view.findViewById(R.id.medicineNameTextView);
-        TextView timeTextView = view.findViewById(R.id.medicineTimeTextView);
+        TextView nameTextView = view.findViewById(R.id.medicineNameEditText);
+        TextView timeTextView = view.findViewById(R.id.medicineNameEditText);
 
         String medicineName = cursor.getString(cursor.getColumnIndexOrThrow(
                 MedicineContract.MedicineEntry.COLUMN_MEDICINE_NAME));

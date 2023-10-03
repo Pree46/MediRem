@@ -73,9 +73,6 @@ public class medicine_remainder extends AppCompatActivity {
             case R.id.pillsRadioButton:
                 medicineType = "Pills";
                 break;
-            case R.id.tabletRadioButton:
-                medicineType = "Tablet";
-                break;
         }
 
         String medName = medicineName.getText().toString();
