@@ -1,8 +1,12 @@
+
 <p align="center">
     <img alt = "MediRem Logo" src = "app/src/main/res/drawable/logo.png" height="180">
 </p>
+
 # MediRem
 The MediCare Reminder App is designed to address this issue by assisting individuals in managing their health effectively. It serves as a tool to keep track of medications, health check-ups, and lab test reports, ensuring that users never miss crucial health-related activities.
+<br>
+
 ## ✨ Features
 - Medication Reminders: Set reminders for medications with specific details.
 - Health Check-up Alerts: Receive timely alerts for scheduled health check-ups.
