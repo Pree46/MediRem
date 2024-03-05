@@ -1,6 +1,6 @@
 # MediRem
 <p align="center">
-    <img alt = "MediRem Logo" src = "" height="180">
+    <img alt = "MediRem Logo" src = "app/src/main/res/drawable/logo.png" height="180">
 </p>
 <h1 align="center" >MediRem</h1>
 Description
